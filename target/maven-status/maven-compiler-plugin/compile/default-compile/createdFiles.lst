@@ -1,0 +1,6 @@
+com\demo\utils\ExcelUtils.class
+com\demo\utils\ConfigReader.class
+com\demo\factory\DriverFactory.class
+com\demo\pages\DemoLaunchLoginPage.class
+com\demo\utils\LogsHandler.class
+com\demo\pages\BasePage.class

@@ -1,0 +1,15 @@
+@AgileTeamPods
+
+Feature: Agile Team pods Navigation
+  As a user, I want to navigate through the Agile Team Pods age to access different forms.
+
+  Scenario: Navigate to on Demand Page
+    Given the user is on the Home page
+    When the user hovers Staffing Menu
+    And click Agile Team Pods Menu
+    Then On Agile Team Pods page should appear
+
+  Scenario: Navigate to Get in Touch via Agile Team Pods page
+    Given the user is on the Agile Team Pods page
+    When the user clicks Get Started button
+    Then the Get in Touch form should appear
