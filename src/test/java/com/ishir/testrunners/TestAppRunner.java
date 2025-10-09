@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         features = {"src/test/resources/features"},
-         tags ="@StaffingPage",
+        tags = "@AboutPage or @TeamsPage or @NewsPage or @ClientsPage or @SuccessStories or @InsightPage or @StaffingPage",
         glue= {"com.ishir.hooksmanager", "com.ishir.stepsdefinitions"},
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "rerun:target/Rerun.txt"},
         publish = true,
