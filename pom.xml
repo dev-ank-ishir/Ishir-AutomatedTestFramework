@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>TruelopWeb</artifactId>
+    <artifactId>ishir.com</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -113,7 +113,12 @@
             <version>2.0.7</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version> <!-- latest stable -->
+            <scope>provided</scope>
+        </dependency>
 
 
     </dependencies>

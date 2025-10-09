@@ -1,6 +1,34 @@
-D:\Learning & POC\Gogs Local Repo\CucumberBDDFramework\src\main\java\com\demo\utils\ConfigReader.java
-D:\Learning & POC\Gogs Local Repo\CucumberBDDFramework\src\main\java\com\demo\utils\ExcelUtils.java
-D:\Learning & POC\Gogs Local Repo\CucumberBDDFramework\src\main\java\com\demo\pages\BasePage.java
-D:\Learning & POC\Gogs Local Repo\CucumberBDDFramework\src\main\java\com\demo\factory\DriverFactory.java
-D:\Learning & POC\Gogs Local Repo\CucumberBDDFramework\src\main\java\com\demo\pages\DemoLaunchLoginPage.java
-D:\Learning & POC\Gogs Local Repo\CucumberBDDFramework\src\main\java\com\demo\utils\LogsHandler.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\mainMenu\StaffingPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\DataAIAcceleratorPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\about\CoreValuesPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\base\BasePage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\careers\CareersPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\MaintenanceSupportPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\about\TeamPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\utils\SiteCrawlerExport.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\TrendingTechPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\careers\OpenRolesPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\about\NewsPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\about\AboutPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\DataAnalyticsPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\work\ClientsPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\OnDemandTalentPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\careers\CulturePage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\mainMenu\SoftwareDevPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\about\CompanyPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\CustomSoftwareDevPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\utils\ConfigReader.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\ProjectRescuePage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\AgileTeamPodsPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\factory\DriverFactory.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\mainMenu\StrategicAdvisoryPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\GlobalCapacityCentrePage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\insight\InsightPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\EnterpriseAIPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\work\SuccessStoriesPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\utils\ExcelUtils.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\common\HeaderSection.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\about\EventsPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\services\subMenu\InnovationAcceleratorPage.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\utils\LogsHandler.java
+D:\LearningPOC\Gogs Local Repo\Ishir-AutomatedTestFramework\src\main\java\com\ishir\pages\HomePage.java

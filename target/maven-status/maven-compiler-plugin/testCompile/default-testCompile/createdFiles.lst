@@ -1,4 +1,0 @@
-com\demo\hooksmanager\ApplicationHooks.class
-com\demo\stepsdefinitions\DemoLaunchLoginSteps.class
-com\demo\testrunners\TestAppRunner.class
-com\demo\testrunners\TestFailedCasesRunner.class

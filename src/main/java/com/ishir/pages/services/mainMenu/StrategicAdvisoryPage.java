@@ -11,6 +11,8 @@ public class StrategicAdvisoryPage extends BasePage {
 
     By loc_Services = By.linkText("Services");
 
+    By loc_GetInTouch_bottom = By.cssSelector("div#GetStartedToday a");
+
 
     public StrategicAdvisoryPage(WebDriver driver) {
         super(driver);

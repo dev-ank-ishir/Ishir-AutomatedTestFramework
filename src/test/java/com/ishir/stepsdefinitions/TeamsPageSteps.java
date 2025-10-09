@@ -2,20 +2,24 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
+import com.ishir.pages.about.AboutPage;
 import com.ishir.pages.about.TeamPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class TeamsPageSteps {
-
-    TeamPage teamPage = new TeamPage(DriverFactory.getDriver());
     HomePage homePage = new HomePage(DriverFactory.getDriver());
+    TeamPage teamPage = homePage.teamPageFromHomePage();
+    AboutPage aboutPage = homePage.aboutPageFromHomePage();
+
 
     @Then("Team page should appear")
 
     public void teamPageShouldAppear() {
 
+        Assert.assertEquals(homePage.doGetCurrentPageURL(),"https://www.ishir.com/team.htm");
 
     }
 
@@ -31,7 +35,8 @@ public class TeamsPageSteps {
     public void theUserClicksTheGetStartedButtonOnTeamsPage() {
 
         homePage.allowCookie();
-
+        aboutPage.openAboutDropDown();
+        teamPage.selectTeamOption();
         teamPage.clickGetStartedTeamsPage();
 
     }

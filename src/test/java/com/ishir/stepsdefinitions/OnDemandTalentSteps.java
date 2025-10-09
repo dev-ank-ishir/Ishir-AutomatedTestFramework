@@ -21,4 +21,8 @@ public class OnDemandTalentSteps {
     @Given("the user is on the On Demand Talent page")
     public void theUserIsOnTheOnDemandTalentPage() {
     }
+
+    @When("the user clicks Get Started button on demand page")
+    public void theUserClicksGetStartedButtonOnDemandPage() {
+    }
 }

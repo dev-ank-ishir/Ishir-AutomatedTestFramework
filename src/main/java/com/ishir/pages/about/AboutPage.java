@@ -8,13 +8,8 @@ public class AboutPage extends BasePage {
 
     By AboutLink = By.linkText("About");
     By OurStoryLink = By.linkText("Our Story");
-
-    By loc_btn_getStarted=By.cssSelector("div.custom_button>a");
-
-    By loc_close_Popup=By.cssSelector("div#exitpopup");
-    By loc_Close_btn_Popup=By.cssSelector("div#exitpopup>div.closeExitPopup");
-
-    private By allowAllCookies = By.cssSelector("button[id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll']");
+    By loc_btn_getStarted_Banner = By.cssSelector("div.custom_button>a");
+    By loc_btn_getStarted_Engage = By.cssSelector("div[class*='how_we_engage'] a");
 
 
     public AboutPage(WebDriver driver) {
@@ -32,28 +27,20 @@ public class AboutPage extends BasePage {
 
     }
 
-    public void clickGetStartedButton() {
-        doClickAction(loc_btn_getStarted);
+    public void clickGetStartedButtonBanner() {
+        doClickAction(loc_btn_getStarted_Banner);
 
     }
 
-    public void checkAndDismissPopup() {
-
-        if (isElementVisible(loc_close_Popup)) {
-
-            doClickAction(loc_Close_btn_Popup);
-
-        }
+    public void clickGetStartedButtonEnagage() {
+        doClickAction(loc_btn_getStarted_Engage);
 
     }
-
-    public void allowCookie() {
-
-        doClickAction(allowAllCookies);
-
-    }
-
-
 
 
 }
+
+
+
+
+

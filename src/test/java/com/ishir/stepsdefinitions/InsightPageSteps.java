@@ -8,11 +8,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class InsightPageSteps {
 
     private HomePage homePage = new HomePage(DriverFactory.getDriver());
-    private InsightPage insightPage = new InsightPage(DriverFactory.getDriver());
+    private InsightPage insightPage = homePage.insightPageFromHomePage();
     @When("the user clicks the Insight option")
     public void theUserClicksTheInsightOption() {
 
@@ -22,6 +23,7 @@ public class InsightPageSteps {
 
     @Then("Insight page should appear")
     public void insightPageShouldAppear() {
+        Assert.assertEquals(insightPage.doGetCurrentPageURL(),"https://www.ishir.com/blog.htm");
     }
 
     @Given("the user is on the Insight page")
@@ -32,7 +34,6 @@ public class InsightPageSteps {
     public void theUserClicksTheReadMoreLink() {
 
         homePage.allowCookie();
-        homePage.closePopup();
         insightPage.clickInsightLink();
         insightPage.clickReadMoreLink();
 

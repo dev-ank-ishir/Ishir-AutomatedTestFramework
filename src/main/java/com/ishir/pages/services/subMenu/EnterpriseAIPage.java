@@ -1,4 +1,10 @@
 package com.ishir.pages.services.subMenu;
 
-public class EnterpriseAIPage {
+import com.ishir.pages.base.BasePage;
+import org.openqa.selenium.WebDriver;
+
+public class EnterpriseAIPage extends BasePage {
+    public EnterpriseAIPage(WebDriver driver) {
+        super(driver);
+    }
 }

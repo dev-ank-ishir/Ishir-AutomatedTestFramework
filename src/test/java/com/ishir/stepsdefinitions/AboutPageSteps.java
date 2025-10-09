@@ -9,17 +9,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-
-import java.sql.DriverManager;
 
 public class AboutPageSteps {
 
-    private HomePage homePage=new HomePage(DriverFactory.getDriver());
-    private AboutPage aboutPage = homePage.fromHomePage();
+    private HomePage homePage = new HomePage(DriverFactory.getDriver());
+     AboutPage aboutPage = homePage.aboutPageFromHomePage();
 
 
-    @Given("the user opens the About dropdown")
+    @When("the user opens the About dropdown")
 
     public void the_user_opens_the_About_dropdown() {
         homePage.allowCookie();
@@ -44,19 +41,25 @@ public class AboutPageSteps {
     public void theUserIsOnTheOurStoryPage() {
 
     }
-    @When("the user clicks the Get Started button")
-    public void theUserClicksTheGetStartedButton() throws InterruptedException {
+
+    @When("the user clicks the Get Started button under banner")
+    public void theUserClicksTheGetStartedButtonUnderBanner() throws InterruptedException {
 
         homePage.allowCookie();
         Thread.sleep(8000);
-         aboutPage.checkAndDismissPopup();
         aboutPage.openAboutDropDown();
         aboutPage.selectOurStoryOption();
-        aboutPage.clickGetStartedButton();
-
+        aboutPage.clickGetStartedButtonBanner();
     }
 
+    @When("the user clicks the Get Started button under How We Engage")
+    public void theUserClicksTheGetStartedButtonUnderHowWeEngage() throws InterruptedException {
 
+        homePage.allowCookie();
+        Thread.sleep(8000);
+        aboutPage.openAboutDropDown();
+        aboutPage.selectOurStoryOption();
+        aboutPage.clickGetStartedButtonEnagage();
 
-
+    }
 }

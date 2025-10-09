@@ -12,7 +12,7 @@ import org.junit.Assert;
 public class ClientsPageSteps {
 
     private HomePage homePage = new HomePage(DriverFactory.getDriver());
-    private ClientsPage clientsPage = new ClientsPage(DriverFactory.getDriver());
+    private ClientsPage clientsPage = homePage.clientsFromHomePage();
 
     @When("the user opens the Work dropdown")
     public void theUserOpensTheWorkDropdown() {
@@ -46,15 +46,17 @@ public class ClientsPageSteps {
     public void theUserClicksStartYourInnovationJourneyButton() {
 
         homePage.allowCookie();
+        clientsPage.clickWorkMenu();
+        clientsPage.selectClientsOption();
         clientsPage.clickInnovationJourney();
     }
 
     @When("the user clicks Let's talk link")
     public void theUserClicksLetSTalkLink() {
 
+        homePage.allowCookie();
         clientsPage.clickWorkMenu();
         clientsPage.selectClientsOption();
-        homePage.allowCookie();
         clientsPage.clickLetsTak();
     }
 }

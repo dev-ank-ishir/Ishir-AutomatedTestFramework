@@ -68,9 +68,9 @@ public class ApplicationHooks {
 
   public void quitBrowser() throws InterruptedException {
 
-       Thread.sleep(25000);
+       Thread.sleep(10000);
 
-     // driver.quit();
+        driver.quit();
 
 }
 
@@ -89,11 +89,10 @@ public class ApplicationHooks {
                 scenario.attach(sourcePath,"image/png",screenshotName);
 
 
-
-
      }
          }
 
+         /*
 
     @After(order = 1)
 
@@ -120,7 +119,7 @@ public class ApplicationHooks {
 
 
     }
-
+*/
 
 
     }

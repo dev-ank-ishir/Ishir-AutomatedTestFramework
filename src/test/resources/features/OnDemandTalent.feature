@@ -11,5 +11,5 @@ Feature: On Demand Page Navigation
 
   Scenario: Navigate to Get in Touch via On Demand Talent page
     Given the user is on the On Demand Talent page
-    When the user clicks Get Started button
+    When the user clicks Get Started button on demand page
     Then the Get in Touch form should appear

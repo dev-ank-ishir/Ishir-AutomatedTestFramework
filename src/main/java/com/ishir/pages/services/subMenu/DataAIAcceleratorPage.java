@@ -1,4 +1,10 @@
 package com.ishir.pages.services.subMenu;
 
-public class DataAIAcceleratorPage {
+import com.ishir.pages.base.BasePage;
+import org.openqa.selenium.WebDriver;
+
+public class DataAIAcceleratorPage extends BasePage {
+    public DataAIAcceleratorPage(WebDriver driver) {
+        super(driver);
+    }
 }

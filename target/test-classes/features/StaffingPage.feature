@@ -9,8 +9,13 @@ Feature: Staffing Page Navigation
     And click Staffing Menu option
     Then Staffing page should appear
 
-  Scenario: Navigate to Get in Touch via Staffing page
+  Scenario: Navigate to Get in Touch via main banner on Staffing page
     Given the user is on the Staffing page
-    When the user clicks Get Started button
+    When the user clicks main Get Started button
     Then the Get in Touch form should appear
 
+
+  Scenario: Navigate to Get in Touch via bottom banner on Staffing page
+    Given the user is on the Staffing page
+    When the user clicks bottom Get Started button
+    Then the Get in Touch form should appear

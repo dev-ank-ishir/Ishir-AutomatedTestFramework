@@ -17,7 +17,7 @@ public class HomePageSteps {
 
     @Given("the user is on the Home page")
     public void the_user_is_on_the_Home_page() {
-        System.out.println();
+
     }
 
     @When("the user clicks the Get Started button in the header")

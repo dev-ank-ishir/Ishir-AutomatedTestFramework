@@ -8,13 +8,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class SuccessStoriesSteps {
 
     private HomePage homePage = new HomePage(DriverFactory.getDriver());
-    private SuccessStoriesPage successStoriesPage = new SuccessStoriesPage(DriverFactory.getDriver());
-
-    private ClientsPage clientsPage = new ClientsPage(DriverFactory.getDriver());
+    private ClientsPage clientsPage = homePage.clientsFromHomePage();
+    private SuccessStoriesPage successStoriesPage = homePage.successStoriesFromHomePage();
 
 
     @And("selects the Success Stories option")
@@ -26,6 +26,7 @@ public class SuccessStoriesSteps {
     @Then("the Success Stories page should appear")
     public void theSuccessStoriesPageShouldAppear() {
 
+        Assert.assertEquals(successStoriesPage.doGetCurrentPageURL(), "https://www.ishir.com/successstories.htm");
 
     }
 
@@ -36,7 +37,6 @@ public class SuccessStoriesSteps {
     @When("the user clicks the available view case study")
     public void theUserClicksTheAvailableViewCaseStudy() {
         homePage.allowCookie();
-        homePage.closePopup();
         clientsPage.clickWorkMenu();
         successStoriesPage.clickSuccessStoriesLink();
         successStoriesPage.clickViewCaseStudyLink();

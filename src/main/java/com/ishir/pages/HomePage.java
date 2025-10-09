@@ -1,13 +1,21 @@
 package com.ishir.pages;
 
 import com.ishir.pages.about.AboutPage;
+import com.ishir.pages.about.EventsPage;
+import com.ishir.pages.about.NewsPage;
+import com.ishir.pages.about.TeamPage;
 import com.ishir.pages.base.BasePage;
+import com.ishir.pages.insight.InsightPage;
+import com.ishir.pages.services.mainMenu.StaffingPage;
+import com.ishir.pages.services.mainMenu.StrategicAdvisoryPage;
+import com.ishir.pages.work.ClientsPage;
+import com.ishir.pages.work.SuccessStoriesPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
 
-  //  private WebDriver driver;
+    //  private WebDriver driver;
 
     //---By Locators--------------
 
@@ -26,6 +34,9 @@ public class HomePage extends BasePage {
     private By allowAllCookies = By.cssSelector("button[id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll']");
 
     private By closePopup = By.cssSelector("div.closeExitPopup");
+
+    private By loc_close_Popup = By.cssSelector("div#exitpopup");
+    private By loc_Close_btn_Popup = By.cssSelector("div#exitpopup>div.closeExitPopup");
 
     //---Page class constructor------
     public HomePage(WebDriver driver) {
@@ -74,7 +85,7 @@ public class HomePage extends BasePage {
     }
 
 
-    public void clikcLogo() {
+    public void clickLogo() {
 
         doClickAction(app_Logo);
 
@@ -84,8 +95,23 @@ public class HomePage extends BasePage {
     public void allowCookie() {
 
         doClickAction(allowAllCookies);
+/*
+        try {
+            if (isElementVisible(loc_close_Popup)) {
+
+                doClickAction(loc_Close_btn_Popup);
+
+            }
+
+
+        } catch (Exception e) {
+
+
+        }
+*/
 
     }
+
 
     public void closePopup() {
 
@@ -93,9 +119,51 @@ public class HomePage extends BasePage {
 
     }
 
-    public AboutPage fromHomePage(){
+    public AboutPage aboutPageFromHomePage() {
 
         return new AboutPage(driver);
+    }
+
+    public TeamPage teamPageFromHomePage() {
+
+        return new TeamPage(driver);
+    }
+
+    public EventsPage eventsPageFromHomePage() {
+
+        return new EventsPage(driver);
+    }
+
+
+    public NewsPage newsPageFromHomePage() {
+
+        return new NewsPage(driver);
+    }
+
+    public ClientsPage clientsFromHomePage() {
+
+        return new ClientsPage(driver);
+    }
+
+    public SuccessStoriesPage successStoriesFromHomePage() {
+
+        return new SuccessStoriesPage(driver);
+    }
+
+    public InsightPage insightPageFromHomePage() {
+
+        return new InsightPage(driver);
+    }
+
+    public StaffingPage staffingPageFromHomePage() {
+
+        return new StaffingPage(driver);
+    }
+
+    public StrategicAdvisoryPage strategicAdvisoryFromHomePage() {
+
+        return new StrategicAdvisoryPage(driver);
+
     }
 
 

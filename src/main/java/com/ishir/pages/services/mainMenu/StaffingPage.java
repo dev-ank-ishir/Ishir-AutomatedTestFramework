@@ -12,7 +12,10 @@ public class StaffingPage extends BasePage {
     }
 
     By loc_Staffing = By.linkText("Staffing & Augmentation");
-    By loc_GetStarted = By.cssSelector("div.custom_button>a");
+    By loc_GetStarted_main = By.cssSelector("div.custom_button>a");
+
+    By loc_GetInTouch_bottom = By.cssSelector("div#GetStartedToday a");
+
 
     public void selectStaffingMenu() {
 
@@ -20,12 +23,17 @@ public class StaffingPage extends BasePage {
 
     }
 
-    public void clickGetStarted() {
+    public void clickGetStartedMain() {
 
-        doClickAction(loc_GetStarted);
+        doClickAction(loc_GetStarted_main);
 
     }
 
+    public void clickGetStartedBottom() {
+
+        doClickAction(loc_GetInTouch_bottom);
+
+    }
 
 }
 

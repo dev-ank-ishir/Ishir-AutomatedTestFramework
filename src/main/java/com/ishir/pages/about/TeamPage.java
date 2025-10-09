@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class TeamPage extends BasePage {
-
-
     By btn_getStarted = By.cssSelector("div.custom_button>a");
     By TeamLink = By.linkText("Team");
 

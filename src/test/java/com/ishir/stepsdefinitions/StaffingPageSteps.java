@@ -8,14 +8,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class StaffingPageSteps {
-
-
     HomePage homePage = new HomePage(DriverFactory.getDriver());
-    StaffingPage staffingPage = new StaffingPage(DriverFactory.getDriver());
+    StrategicAdvisoryPage strategicAdvisoryPage = homePage.strategicAdvisoryFromHomePage();
+    StaffingPage staffingPage = homePage.staffingPageFromHomePage();
 
-    StrategicAdvisoryPage strategicAdvisoryPage = new StrategicAdvisoryPage(DriverFactory.getDriver());
 
     @Given("the user is on the Staffing page")
     public void theUserIsOnTheStaffingPage() {
@@ -25,21 +24,29 @@ public class StaffingPageSteps {
     @And("click Staffing Menu option")
     public void clickStaffingMenuOption() {
 
-        homePage.allowCookie();
         staffingPage.selectStaffingMenu();
     }
 
     @Then("Staffing page should appear")
     public void staffingPageShouldAppear() {
+
+        Assert.assertEquals(staffingPage.doGetCurrentPageURL(),"https://www.ishir.com/staffing-and-augmentation.htm");
     }
 
-    @When("the user clicks Get Started button")
-    public void theUserClicksGetStartedButton() {
+    @When("the user clicks main Get Started button")
+    public void theUserClicksMainGetStartedButton() {
         homePage.allowCookie();
         strategicAdvisoryPage.selectServicesMenu();
         staffingPage.selectStaffingMenu();
-        staffingPage.clickGetStarted();
+        staffingPage.clickGetStartedMain();
 
+    }
 
+    @When("the user clicks bottom Get Started button")
+    public void theUserClicksBottomGetStartedButton() {
+        homePage.allowCookie();
+        strategicAdvisoryPage.selectServicesMenu();
+        staffingPage.selectStaffingMenu();
+        staffingPage.clickGetStartedBottom();
     }
 }
