@@ -3,7 +3,6 @@ package com.ishir.stepsdefinitions;
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
 import com.ishir.pages.insight.InsightPage;
-import com.ishir.pages.work.SuccessStoriesPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,7 +16,7 @@ public class InsightPageSteps {
     @When("the user clicks the Insight option")
     public void theUserClicksTheInsightOption() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         insightPage.clickInsightLink();
     }
 
@@ -33,7 +32,7 @@ public class InsightPageSteps {
     @When("the user clicks the Read More link")
     public void theUserClicksTheReadMoreLink() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         insightPage.clickInsightLink();
         insightPage.clickReadMoreLink();
 

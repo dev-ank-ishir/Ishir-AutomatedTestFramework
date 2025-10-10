@@ -21,7 +21,7 @@ public class ProjectRescueSteps {
     @And("click Project Rescue Menu")
     public void clickProjectRescueMenu() throws InterruptedException {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
         customSoftwareDevPage.hoverSoftDevMenu();
         Thread.sleep(6000);
@@ -39,7 +39,7 @@ public class ProjectRescueSteps {
     @When("the user clicks Get Started on Project Rescue page")
     public void theUserClicksGetStartedOnProjectRescuePage() throws InterruptedException {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
         Thread.sleep(8000);
         customSoftwareDevPage.hoverSoftDevMenu();

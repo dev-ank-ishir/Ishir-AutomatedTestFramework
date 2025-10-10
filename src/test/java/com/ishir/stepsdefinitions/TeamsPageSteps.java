@@ -34,7 +34,7 @@ public class TeamsPageSteps {
     @When("the user clicks the Get Started button on Teams Page")
     public void theUserClicksTheGetStartedButtonOnTeamsPage() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         aboutPage.openAboutDropDown();
         teamPage.selectTeamOption();
         teamPage.clickGetStartedTeamsPage();

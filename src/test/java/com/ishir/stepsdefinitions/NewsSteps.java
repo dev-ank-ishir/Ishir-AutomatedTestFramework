@@ -3,7 +3,6 @@ package com.ishir.stepsdefinitions;
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
 import com.ishir.pages.about.AboutPage;
-import com.ishir.pages.about.EventsPage;
 import com.ishir.pages.about.NewsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -40,7 +39,7 @@ public class NewsSteps {
     @When("the user clicks the Stay Updated button on News Page")
     public void theUserClicksTheStayUpdatedButtonOnNewsPage() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         aboutPage.openAboutDropDown();
         newsPage.selectNewsMenu();
         newsPage.clickStayUpdatedOverNewsPage();

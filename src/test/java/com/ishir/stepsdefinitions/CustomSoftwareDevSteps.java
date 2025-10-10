@@ -17,7 +17,7 @@ public class CustomSoftwareDevSteps {
 
     @When("the user hovers Software dev support Menu")
     public void theUserHoversSoftwareDevSupportMenu() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
         customSoftwareDevPage.hoverSoftDevMenu();
     }
@@ -41,7 +41,7 @@ public class CustomSoftwareDevSteps {
     @When("the user clicks Get Started on custom software dev page")
     public void theUserClicksGetStartedOnCustomSoftwareDevPage() throws InterruptedException {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
         Thread.sleep(8000);
         customSoftwareDevPage.hoverSoftDevMenu();

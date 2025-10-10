@@ -17,7 +17,7 @@ public class ClientsPageSteps {
     @When("the user opens the Work dropdown")
     public void theUserOpensTheWorkDropdown() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         clientsPage.clickWorkMenu();
 
     }
@@ -45,7 +45,7 @@ public class ClientsPageSteps {
     @When("the user clicks start your innovation journey button")
     public void theUserClicksStartYourInnovationJourneyButton() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         clientsPage.clickWorkMenu();
         clientsPage.selectClientsOption();
         clientsPage.clickInnovationJourney();
@@ -54,7 +54,7 @@ public class ClientsPageSteps {
     @When("the user clicks Let's talk link")
     public void theUserClicksLetSTalkLink() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         clientsPage.clickWorkMenu();
         clientsPage.selectClientsOption();
         clientsPage.clickLetsTak();

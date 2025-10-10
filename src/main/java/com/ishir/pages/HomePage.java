@@ -92,23 +92,25 @@ public class HomePage extends BasePage {
     }
 
 
-    public void allowCookie() {
+    public void handleCookieAndPopups() {
 
-        doClickAction(allowAllCookies);
-/*
         try {
-            if (isElementVisible(loc_close_Popup)) {
-
-                doClickAction(loc_Close_btn_Popup);
-
+           
+            if (isElementVisible(allowAllCookies)) {
+                doClickAction(allowAllCookies);
+                System.out.println("Allowed all cookies");
             }
 
+          
+            if (isElementVisible(loc_close_Popup)) {
+                doClickAction(loc_Close_btn_Popup);
+                System.out.println("✅ Closed exit popup");
+            }
 
         } catch (Exception e) {
-
-
+            System.out.println("No cookies or popup to handle: " + e.getMessage());
         }
-*/
+
 
     }
 

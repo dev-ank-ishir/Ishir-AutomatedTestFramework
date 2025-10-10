@@ -19,7 +19,7 @@ public class SoftwareDevSupportPageSteps {
 
     @And("click Software Dev Support Menu option")
     public void clickSoftwareDevSupportMenuOption() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         softwareDevPage.selectSoftwareDevSupportMenu();
     }
 
@@ -34,7 +34,7 @@ public class SoftwareDevSupportPageSteps {
 
     @When("the user clicks Start Your Project Today button")
     public void theUserClicksStartYourProjectTodayButton() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
         softwareDevPage.selectSoftwareDevSupportMenu();
         softwareDevPage.clickStartYourProjectToday();

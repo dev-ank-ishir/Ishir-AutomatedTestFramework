@@ -2,7 +2,6 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.utils.LogsHandler;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,7 +21,7 @@ public class HomePageSteps {
 
     @When("the user clicks the Get Started button in the header")
     public void userClicksGetStartedButtonInHeader() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         homePage.clikcGetStartedHeader();
 
 
@@ -40,7 +39,7 @@ public class HomePageSteps {
     @When("the user clicks the Get Started button in the page content")
     public void userClicksGetStartedButtonInPageContent() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         homePage.clikcGetStartedPageContent();
 
 
@@ -49,7 +48,7 @@ public class HomePageSteps {
     @When("the user clicks the Get Started button in the Ready to Start section")
     public void userClicksGetStartedButtonInReadyToStartSection() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         homePage.clikcGetStartedReadyToStart();
 
     }

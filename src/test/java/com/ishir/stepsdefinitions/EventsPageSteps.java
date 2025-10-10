@@ -41,7 +41,7 @@ public class EventsPageSteps {
     @When("the user clicks the Stay Updated button on Events Page")
     public void theUserClicksTheStayUpdatedButtonOnEventsPage() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         aboutPage.openAboutDropDown();
         eventsPage.selectEventOption();
         eventsPage.selectStayUpdatedOption();
@@ -51,7 +51,7 @@ public class EventsPageSteps {
     @When("the user clicks Read More over available event")
     public void theUserClicksReadMoreOverAvailableEvent() {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         aboutPage.openAboutDropDown();
         eventsPage.selectEventOption();
         eventsPage.selectReadMoreEventLink();
@@ -66,7 +66,7 @@ public class EventsPageSteps {
 
     @When("the user clicks the trending blog")
     public void theUserClicksTheTrendingBlog() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         aboutPage.openAboutDropDown();
         eventsPage.selectEventOption();
         eventsPage.selectTrendingBlogLink();

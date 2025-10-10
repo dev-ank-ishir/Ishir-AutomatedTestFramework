@@ -1,7 +1,5 @@
 package com.ishir.pages.base;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 
@@ -14,18 +12,38 @@ public class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected FluentWait fluentWait;
+    protected FluentWait <WebDriver> fluentWait;
 
     // BasePage Class Constructor
     public BasePage(WebDriver driver) {
 
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-        this.fluentWait = new FluentWait(driver);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.fluentWait =  new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(2))
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
 
     }
 
     // Generic Method to launch URL
+
+    public WebElement waitUntilVisibleWithFluentWait(By locator) {
+        return fluentWait.until(driver -> {
+            try {
+                WebElement element = driver.findElement(locator);
+                if (element.isDisplayed()) {
+                    return element;
+                } else {
+                    return null;
+                }
+            } catch (NoSuchElementException | StaleElementReferenceException e) {
+                return null; // keep polling
+            }
+        });
+    }
+
 
     public void doLaunchURL(String URL) {
         driver.get(URL);
@@ -47,7 +65,18 @@ public class BasePage {
     public void doClickAction(By locator) {
 
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
+
+        try {
+            WebElement element = waitUntilVisibleWithFluentWait(locator);
+            if (element != null && element.isDisplayed() && element.isEnabled()) {
+                element.click();
+            } else {
+                System.out.println("Element not clickable or visible: " + locator);
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to click on: " + locator + " | Reason: " + e.getMessage());
+        }
 
         // driver.findElement(locator).click();
 
@@ -98,10 +127,14 @@ public class BasePage {
     }
 
     public boolean isElementVisible(By locator) {
-
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
-
+        try {
+            WebElement element = waitUntilVisibleWithFluentWait(locator);
+            return element != null && element.isDisplayed();
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
+
 
     public boolean isElementEnabled(By locator) {
 

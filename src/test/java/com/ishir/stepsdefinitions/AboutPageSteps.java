@@ -3,7 +3,6 @@ package com.ishir.stepsdefinitions;
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
 import com.ishir.pages.about.AboutPage;
-import com.ishir.pages.base.BasePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,7 +18,7 @@ public class AboutPageSteps {
     @When("the user opens the About dropdown")
 
     public void the_user_opens_the_About_dropdown() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         aboutPage.openAboutDropDown();
 
     }
@@ -45,7 +44,7 @@ public class AboutPageSteps {
     @When("the user clicks the Get Started button under banner")
     public void theUserClicksTheGetStartedButtonUnderBanner() throws InterruptedException {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         Thread.sleep(8000);
         aboutPage.openAboutDropDown();
         aboutPage.selectOurStoryOption();
@@ -55,7 +54,7 @@ public class AboutPageSteps {
     @When("the user clicks the Get Started button under How We Engage")
     public void theUserClicksTheGetStartedButtonUnderHowWeEngage() throws InterruptedException {
 
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         Thread.sleep(8000);
         aboutPage.openAboutDropDown();
         aboutPage.selectOurStoryOption();

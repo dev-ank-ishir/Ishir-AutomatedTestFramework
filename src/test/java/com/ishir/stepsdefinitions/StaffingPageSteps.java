@@ -35,7 +35,7 @@ public class StaffingPageSteps {
 
     @When("the user clicks main Get Started button")
     public void theUserClicksMainGetStartedButton() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         strategicAdvisoryPage.selectServicesMenu();
         staffingPage.selectStaffingMenu();
         staffingPage.clickGetStartedMain();
@@ -44,7 +44,7 @@ public class StaffingPageSteps {
 
     @When("the user clicks bottom Get Started button")
     public void theUserClicksBottomGetStartedButton() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         strategicAdvisoryPage.selectServicesMenu();
         staffingPage.selectStaffingMenu();
         staffingPage.clickGetStartedBottom();

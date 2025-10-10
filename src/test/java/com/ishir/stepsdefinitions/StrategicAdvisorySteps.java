@@ -15,7 +15,7 @@ public class StrategicAdvisorySteps {
 
     @When("the user clicks the Services Menu")
     public void the_user_clicks_the_Services_Menu() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
     }
 
@@ -35,7 +35,7 @@ public class StrategicAdvisorySteps {
 
     @When("the user clicks Start Your Journey button")
     public void the_user_clicks_Start_Your_Journey_button() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         StrategicAdvisoryPage.selectServicesMenu();
         StrategicAdvisoryPage.selectStrategicMenu();
         StrategicAdvisoryPage.clickStartJourney();

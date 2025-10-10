@@ -36,7 +36,7 @@ public class SuccessStoriesSteps {
 
     @When("the user clicks the available view case study")
     public void theUserClicksTheAvailableViewCaseStudy() {
-        homePage.allowCookie();
+        homePage.handleCookieAndPopups();
         clientsPage.clickWorkMenu();
         successStoriesPage.clickSuccessStoriesLink();
         successStoriesPage.clickViewCaseStudyLink();
