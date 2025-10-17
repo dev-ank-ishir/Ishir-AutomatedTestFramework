@@ -2,34 +2,35 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.services.mainMenu.StrategicAdvisoryPage;
+import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.CustomSoftwareDevPage;
 import com.ishir.pages.services.subMenu.ProjectRescuePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class ProjectRescueSteps {
 
     HomePage homePage=new HomePage(DriverFactory.getDriver());
-    StrategicAdvisoryPage StrategicAdvisoryPage = new StrategicAdvisoryPage(DriverFactory.getDriver());
-    ProjectRescuePage projectRescuePage=new ProjectRescuePage(DriverFactory.getDriver());
+    AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
+    CustomSoftwareDevPage customSoftwareDevPage=homePage.customSoftwareDevPageFromHomePage();
+    ProjectRescuePage projectRescuePage=homePage.projectRescuePageFromHomePage();
 
-    CustomSoftwareDevPage customSoftwareDevPage=new CustomSoftwareDevPage(DriverFactory.getDriver());
 
     @And("click Project Rescue Menu")
     public void clickProjectRescueMenu() throws InterruptedException {
 
-        homePage.handleCookieAndPopups();
-        StrategicAdvisoryPage.selectServicesMenu();
+        AdvisoryServicesPage.selectServicesMenu();
         customSoftwareDevPage.hoverSoftDevMenu();
-        Thread.sleep(6000);
         projectRescuePage.selectProjectRescueMenu();
     }
 
     @Then("Project Rescue page should appear")
     public void projectRescuePageShouldAppear() {
+
+        Assert.assertEquals(projectRescuePage.doGetCurrentPageURL(),"https://www.ishir.com/project-rescue.htm");
     }
 
     @Given("the user is on the Project Rescue page")
@@ -40,11 +41,42 @@ public class ProjectRescueSteps {
     public void theUserClicksGetStartedOnProjectRescuePage() throws InterruptedException {
 
         homePage.handleCookieAndPopups();
-        StrategicAdvisoryPage.selectServicesMenu();
-        Thread.sleep(8000);
+        AdvisoryServicesPage.selectServicesMenu();
         customSoftwareDevPage.hoverSoftDevMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStarted();
+
+    }
+
+    @When("the user clicks Get Started on main banner")
+    public void theUserClicksGetStartedOnMainBanner() {
+        homePage.handleCookieAndPopups();
+        AdvisoryServicesPage.selectServicesMenu();
+        customSoftwareDevPage.hoverSoftDevMenu();
+        projectRescuePage.selectProjectRescueMenu();
+        projectRescuePage.clickGetStarted();
+
+    }
+
+    @When("the user clicks Get Started on under common issues section")
+    public void theUserClicksGetStartedOnUnderCommonIssuesSection() {
+
+        homePage.handleCookieAndPopups();
+        AdvisoryServicesPage.selectServicesMenu();
+        customSoftwareDevPage.hoverSoftDevMenu();
+        projectRescuePage.selectProjectRescueMenu();
+        projectRescuePage.clickGetStartedCommonIssues();
+
+    }
+
+    @When("the user clicks Get Started on under how we engage section")
+    public void theUserClicksGetStartedOnUnderHowWeEngageSection() {
+
+        homePage.handleCookieAndPopups();
+        AdvisoryServicesPage.selectServicesMenu();
+        customSoftwareDevPage.hoverSoftDevMenu();
+        projectRescuePage.selectProjectRescueMenu();
+        projectRescuePage.clickGetStartedHowWeEngage();
 
     }
 }

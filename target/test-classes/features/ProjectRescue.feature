@@ -9,7 +9,17 @@ Feature: Project Rescue Page Navigation
     And click Project Rescue Menu
     Then Project Rescue page should appear
 
-  Scenario: Navigate to Get in Touch via Project Rescue page
+  Scenario: Navigate to Get in Touch via Get Started in main banner
     Given the user is on the Project Rescue page
-    When the user clicks Get Started on Project Rescue page
+    When the user clicks Get Started on main banner
+    Then the Get in Touch form should appear
+
+  Scenario: Navigate to Get in Touch via Get Started under common issues section
+    Given the user is on the Project Rescue page
+    When the user clicks Get Started on under common issues section
+    Then the Get in Touch form should appear
+
+  Scenario: Navigate to Get in Touch via Get Started under how we engage section
+    Given the user is on the Project Rescue page
+    When the user clicks Get Started on under how we engage section
     Then the Get in Touch form should appear

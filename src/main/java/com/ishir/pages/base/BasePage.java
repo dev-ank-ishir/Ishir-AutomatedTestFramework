@@ -1,4 +1,5 @@
 package com.ishir.pages.base;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
@@ -12,15 +13,15 @@ public class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected FluentWait <WebDriver> fluentWait;
+    protected FluentWait<WebDriver> fluentWait;
 
     // BasePage Class Constructor
     public BasePage(WebDriver driver) {
 
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.fluentWait =  new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(30))
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+        this.fluentWait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(25))
                 .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class);
@@ -152,9 +153,18 @@ public class BasePage {
 
     public void hoverToElement(By locator) {
 
-        new Actions(driver).moveToElement(driver.findElement(locator)).build().perform();
+        new Actions(driver).moveToElement(driver.findElement(locator)).pause(Duration.ofSeconds(5)).build().perform();
 
     }
 
+    public void doSwitchToFrame(By locator) {
+
+        driver.switchTo().frame(driver.findElement(locator));
+    }
+
+    public void doSwitchToParentFrame() {
+
+        driver.switchTo().parentFrame();
+    }
 
 }

@@ -14,3 +14,9 @@ Feature: Software Dev Support Page Navigation
     Given the user is on the Software Dev Support page
     When the user clicks Start Your Project Today button
     Then the Get in Touch form should appear
+
+
+  Scenario: Navigate to Get in Touch via Schedule a consultation today
+    Given the user is on the Software Dev Support page
+    When the user clicks Schedule a Consultation button
+    Then the Get in Touch form should appear

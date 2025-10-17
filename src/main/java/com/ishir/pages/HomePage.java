@@ -6,8 +6,10 @@ import com.ishir.pages.about.NewsPage;
 import com.ishir.pages.about.TeamPage;
 import com.ishir.pages.base.BasePage;
 import com.ishir.pages.insight.InsightPage;
+import com.ishir.pages.services.mainMenu.SoftwareDevPage;
 import com.ishir.pages.services.mainMenu.StaffingPage;
-import com.ishir.pages.services.mainMenu.StrategicAdvisoryPage;
+import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
+import com.ishir.pages.services.subMenu.*;
 import com.ishir.pages.work.ClientsPage;
 import com.ishir.pages.work.SuccessStoriesPage;
 import org.openqa.selenium.By;
@@ -162,11 +164,85 @@ public class HomePage extends BasePage {
         return new StaffingPage(driver);
     }
 
-    public StrategicAdvisoryPage strategicAdvisoryFromHomePage() {
+    public AdvisoryServicesPage advisoryServicesFromHomePage() {
 
-        return new StrategicAdvisoryPage(driver);
+        return new AdvisoryServicesPage(driver);
+
+    }
+
+    public SoftwareDevPage SoftwareDevPageFromHomePage() {
+
+        return new SoftwareDevPage(driver);
+
+    }
+
+    public CustomSoftwareDevPage customSoftwareDevPageFromHomePage(){
+        return new CustomSoftwareDevPage(driver);
+
+    }
+
+   public ProjectRescuePage projectRescuePageFromHomePage(){
+
+       return new ProjectRescuePage(driver);
+
+   }
+
+
+  public MaintenanceSupportPage maintenanceSupportPageFromHomePage(){
+
+      return new MaintenanceSupportPage(driver);
+
+  }
+
+    public OnDemandTalentPage OnDemandTalentPageFromHomePage(){
+
+        return new OnDemandTalentPage(driver);
+
+    }
+
+    public AgileTeamPodsPage agileTeamPodsPageFromHomePage(){
+
+        return new AgileTeamPodsPage(driver);
+
+
+    }
+
+    public GlobalCapabilityCentrePage globalCapabilityCentrePageFromHomePage(){
+
+        return new GlobalCapabilityCentrePage(driver);
+
+
+    }
+
+    public EnterpriseAIPage EnterpriseAIPageFromHomePage(){
+
+        return new EnterpriseAIPage(driver);
+
+
+    }
+    public DataAnalyticsPage dataAnalyticsPageFromHomePage(){
+
+        return new DataAnalyticsPage(driver);
+
+
+    }
+
+    public AcceleratorPage acceleratorPageFromHomePage(){
+
+        return new AcceleratorPage(driver);
 
     }
 
 
+    public InnovationAcceleratorPage innovationAcceleratorPageFromHomePage(){
+
+        return new InnovationAcceleratorPage(driver);
+
+    }
+
+    public DataAIAcceleratorPage dataAIAcceleratorPageFromHomePage(){
+
+        return new DataAIAcceleratorPage(driver);
+
+    }
 }

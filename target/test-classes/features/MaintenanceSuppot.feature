@@ -11,5 +11,5 @@ Feature: Maintenance Support Page Navigation
 
   Scenario: Navigate to Get in Touch via Maintenance Support page
     Given the user is on the Maintenance Support page
-    When the user clicks Get Started button
+    When user clicks Get Started button on main banner of Maintenance Support Page
     Then the Get in Touch form should appear

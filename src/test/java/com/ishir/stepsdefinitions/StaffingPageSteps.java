@@ -3,7 +3,7 @@ package com.ishir.stepsdefinitions;
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
 import com.ishir.pages.services.mainMenu.StaffingPage;
-import com.ishir.pages.services.mainMenu.StrategicAdvisoryPage;
+import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +12,7 @@ import org.junit.Assert;
 
 public class StaffingPageSteps {
     HomePage homePage = new HomePage(DriverFactory.getDriver());
-    StrategicAdvisoryPage strategicAdvisoryPage = homePage.strategicAdvisoryFromHomePage();
+    AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     StaffingPage staffingPage = homePage.staffingPageFromHomePage();
 
 
@@ -36,7 +36,7 @@ public class StaffingPageSteps {
     @When("the user clicks main Get Started button")
     public void theUserClicksMainGetStartedButton() {
         homePage.handleCookieAndPopups();
-        strategicAdvisoryPage.selectServicesMenu();
+        advisoryServicesPage.selectServicesMenu();
         staffingPage.selectStaffingMenu();
         staffingPage.clickGetStartedMain();
 
@@ -45,7 +45,7 @@ public class StaffingPageSteps {
     @When("the user clicks bottom Get Started button")
     public void theUserClicksBottomGetStartedButton() {
         homePage.handleCookieAndPopups();
-        strategicAdvisoryPage.selectServicesMenu();
+        advisoryServicesPage.selectServicesMenu();
         staffingPage.selectStaffingMenu();
         staffingPage.clickGetStartedBottom();
     }

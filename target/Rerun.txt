@@ -1,2 +1,0 @@
-file:src/test/resources/features/NewsPage.feature:12
-file:src/test/resources/features/TeamsPage.feature:12

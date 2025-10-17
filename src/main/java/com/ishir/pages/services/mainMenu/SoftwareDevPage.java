@@ -9,6 +9,8 @@ public class SoftwareDevPage extends BasePage {
     By loc_SoftwareDevSupport = By.linkText("Software Development & Support");
     By loc_Start_Your_Project = By.cssSelector("div.custom_button>a");
 
+    By loc_schedule_consultation = By.cssSelector("div#GetStartedToday a");
+
     public SoftwareDevPage(WebDriver driver) {
         super(driver);
     }
@@ -26,5 +28,11 @@ public class SoftwareDevPage extends BasePage {
 
     }
 
+
+    public void clickScheduleConsultation() {
+
+        doClickAction(loc_schedule_consultation);
+
+    }
 
 }

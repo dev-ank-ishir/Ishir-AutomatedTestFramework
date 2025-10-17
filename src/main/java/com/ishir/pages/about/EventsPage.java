@@ -11,9 +11,12 @@ public class EventsPage extends BasePage {
 
     By loc_TrendingBlog = By.cssSelector("div.rpwe-block a");
 
-    By loc_LetsTalk = By.cssSelector("div.threeBox img[alt='Contact Us']");
+    By loc_LetsTalk = By.cssSelector("div.threeBox");
 
-    By loc_getStarted_BlogsPage=By.cssSelector("div.linkWrapper>a");
+    By loc_getStarted_BlogsPage = By.cssSelector("div.linkWrapper>a");
+
+    By loc_iframe_AI_ToastMsg=By.cssSelector("ai-welcome-msg-close-button");
+    By loc_AI_Toast_frame=By.id("hubspot-conversations-iframe");
 
     public EventsPage(WebDriver driver) {
         super(driver);
@@ -41,12 +44,14 @@ public class EventsPage extends BasePage {
 
     public void selectLetsTalkWidget() {
 
-        doClickAction(loc_LetsTalk);
+        getElementsList(loc_LetsTalk).get(0).click();
     }
 
-    public void clickGetStartedBlogsPage(){
+    public void clickGetStartedBlogsPage() {
 
-        doClickAction(loc_getStarted_BlogsPage);
+        doSwitchToFrame(loc_AI_Toast_frame);
+        doClickAction(loc_iframe_AI_ToastMsg);
+        getElementsList(loc_getStarted_BlogsPage).get(1).click();
     }
 
 }

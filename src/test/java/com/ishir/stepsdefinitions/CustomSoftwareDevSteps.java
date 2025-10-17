@@ -2,23 +2,27 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.services.mainMenu.StrategicAdvisoryPage;
+import com.ishir.pages.services.mainMenu.SoftwareDevPage;
+import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.CustomSoftwareDevPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class CustomSoftwareDevSteps {
 
     HomePage homePage=new HomePage(DriverFactory.getDriver());
-    StrategicAdvisoryPage StrategicAdvisoryPage = new StrategicAdvisoryPage(DriverFactory.getDriver());
-    CustomSoftwareDevPage customSoftwareDevPage=new CustomSoftwareDevPage(DriverFactory.getDriver());
+    AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
+
+    SoftwareDevPage softwareDevPage= homePage.SoftwareDevPageFromHomePage();
+    CustomSoftwareDevPage customSoftwareDevPage=homePage.customSoftwareDevPageFromHomePage();
 
     @When("the user hovers Software dev support Menu")
     public void theUserHoversSoftwareDevSupportMenu() {
         homePage.handleCookieAndPopups();
-        StrategicAdvisoryPage.selectServicesMenu();
+        AdvisoryServicesPage.selectServicesMenu();
         customSoftwareDevPage.hoverSoftDevMenu();
     }
 
@@ -30,6 +34,8 @@ public class CustomSoftwareDevSteps {
     @Then("Custom Software Dev page should appear")
     public void customSoftwareDevPageShouldAppear() {
 
+        Assert.assertEquals(customSoftwareDevPage.doGetCurrentPageURL(),"https://www.ishir.com/software-product-development.htm");
+
     }
 
     @Given("the user is on the custom software dev page")
@@ -38,16 +44,32 @@ public class CustomSoftwareDevSteps {
 
     }
 
-    @When("the user clicks Get Started on custom software dev page")
-    public void theUserClicksGetStartedOnCustomSoftwareDevPage() throws InterruptedException {
 
+    @When("user clicks Get Started on main banner custom software dev page")
+    public void userClicksGetStartedOnMainBannerCustomSoftwareDevPage() {
         homePage.handleCookieAndPopups();
-        StrategicAdvisoryPage.selectServicesMenu();
-        Thread.sleep(8000);
+        AdvisoryServicesPage.selectServicesMenu();
         customSoftwareDevPage.hoverSoftDevMenu();
-
         customSoftwareDevPage.clickCustomSoftwareDevelopmentMenu();
         customSoftwareDevPage.clickGetStartedButton();
+    }
 
+    @When("user clicks Get Started on product Journey section")
+    public void userClicksGetStartedOnProductJourneySection() {
+        homePage.handleCookieAndPopups();
+        AdvisoryServicesPage.selectServicesMenu();
+        customSoftwareDevPage.hoverSoftDevMenu();
+        customSoftwareDevPage.clickCustomSoftwareDevelopmentMenu();
+        customSoftwareDevPage.clickGetStartedButtonProductJourney();
+        
+    }
+
+    @When("user clicks Get Started on Find Business problem section")
+    public void userClicksGetStartedOnFindBusinessProblemSection() {
+        homePage.handleCookieAndPopups();
+        AdvisoryServicesPage.selectServicesMenu();
+        customSoftwareDevPage.hoverSoftDevMenu();
+        customSoftwareDevPage.clickCustomSoftwareDevelopmentMenu();
+        customSoftwareDevPage.clickGetStartedButtonFindProblem();
     }
 }

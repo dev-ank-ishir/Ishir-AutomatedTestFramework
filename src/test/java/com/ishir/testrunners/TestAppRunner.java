@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
 
+        //"@HomePage or @AboutPage or @TeamsPage or @EventsPage or @NewsPage or @ClientsPage or @SuccessStories or @InsightPage"
         features = {"src/test/resources/features"},
-        tags = "@AboutPage or @TeamsPage or @NewsPage or @ClientsPage or @SuccessStories or @InsightPage or @StaffingPage",
+        tags = "@Accelerator",
         glue= {"com.ishir.hooksmanager", "com.ishir.stepsdefinitions"},
         plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "rerun:target/Rerun.txt"},
         publish = true,

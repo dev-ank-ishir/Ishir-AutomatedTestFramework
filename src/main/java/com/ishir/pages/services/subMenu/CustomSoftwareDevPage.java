@@ -10,6 +10,9 @@ public class CustomSoftwareDevPage extends BasePage {
 
     By loc_btn_GetStarted = By.cssSelector("div.custom_button>a");
 
+    By loc_GetStarted_productJourney=By.cssSelector("div.product_journey a");
+
+    By loc_GetStarted_FindProblem=By.cssSelector("div.why_need_bx.bg_blue_light a");
     public CustomSoftwareDevPage(WebDriver driver) {
         super(driver);
     }
@@ -31,5 +34,17 @@ public class CustomSoftwareDevPage extends BasePage {
 
         doClickAction(loc_btn_GetStarted);
     }
+
+    public void clickGetStartedButtonProductJourney() {
+
+        doClickAction(loc_GetStarted_productJourney);
+    }
+
+    public void clickGetStartedButtonFindProblem() {
+
+        doClickAction(loc_GetStarted_FindProblem);
+    }
+
+
 
 }

@@ -45,7 +45,6 @@ public class AboutPageSteps {
     public void theUserClicksTheGetStartedButtonUnderBanner() throws InterruptedException {
 
         homePage.handleCookieAndPopups();
-        Thread.sleep(8000);
         aboutPage.openAboutDropDown();
         aboutPage.selectOurStoryOption();
         aboutPage.clickGetStartedButtonBanner();
@@ -55,7 +54,6 @@ public class AboutPageSteps {
     public void theUserClicksTheGetStartedButtonUnderHowWeEngage() throws InterruptedException {
 
         homePage.handleCookieAndPopups();
-        Thread.sleep(8000);
         aboutPage.openAboutDropDown();
         aboutPage.selectOurStoryOption();
         aboutPage.clickGetStartedButtonEnagage();
