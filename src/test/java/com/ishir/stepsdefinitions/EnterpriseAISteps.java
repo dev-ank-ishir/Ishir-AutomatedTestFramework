@@ -13,18 +13,12 @@ import org.junit.Assert;
 public class EnterpriseAISteps {
 
     HomePage homePage = new HomePage(DriverFactory.getDriver());
-    AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
+    AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     EnterpriseAIPage enterpriseAIPage=homePage.EnterpriseAIPageFromHomePage();
 
-    @When("the user hovers Strategic Advisory Menu")
-
-    public void theuserhoversStrategicAdvisoryMenu(){
-
-        homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-
-
-
+    @And("hovers Data+AI Menu")
+    public void hoversDataAIMenu() {
+        enterpriseAIPage.hoversDataAIMenu();
     }
 
     @And("click EnterpriseAI Menu")
@@ -49,8 +43,8 @@ public class EnterpriseAISteps {
     public void userClicksGetStartedButtonOnMainBannerOfEnterpriseAIPage() {
 
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-
+        advisoryServicesPage.selectServicesMenu();
+        enterpriseAIPage.hoversDataAIMenu();
         enterpriseAIPage.selectEnterpriseAIMenu();
         enterpriseAIPage.selectGetStartedMainBannerEnterpriseAI();
     }
@@ -58,9 +52,11 @@ public class EnterpriseAISteps {
     @When("user clicks Get Started on how we engage section of EnterpriseAI Page")
     public void userClicksGetStartedOnHowWeEngageSectionOfEnterpriseAIPage() {
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-
+        advisoryServicesPage.selectServicesMenu();
+        enterpriseAIPage.hoversDataAIMenu();
         enterpriseAIPage.selectEnterpriseAIMenu();
         enterpriseAIPage.selectGetStartedHowWeEngageSectionEnterpriseAI();
     }
+
+
 }

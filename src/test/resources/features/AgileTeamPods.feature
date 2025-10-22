@@ -5,7 +5,8 @@ Feature: Agile Team pods Navigation
 
   Scenario: Navigate to on Demand Page
     Given the user is on the Home page
-    When the user hovers Staffing Menu
+    When the user clicks the Services Menu
+    And hovers Talent & Skills Menu option
     And click Agile Team Pods Menu
     Then On Agile Team Pods page should appear
 

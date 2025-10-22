@@ -16,6 +16,7 @@ public class AgileTeamPodsPage extends BasePage {
 
 
     public void clickAgileTeamPodsMenu() {
+        hoverToElement(loc_agileTeamPods_menu);
         doClickAction(loc_agileTeamPods_menu);
     }
 

@@ -6,6 +6,7 @@ import com.ishir.pages.services.mainMenu.SoftwareDevPage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.CustomSoftwareDevPage;
 import com.ishir.pages.services.subMenu.MaintenanceSupportPage;
+import com.ishir.pages.services.subMenu.SoftwareProductDevelopmentPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,17 +16,13 @@ import org.junit.Assert;
 public class MaintenanceSupportSteps {
 
     HomePage homePage=new HomePage(DriverFactory.getDriver());
-    AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
-    CustomSoftwareDevPage customSoftwareDevPage=homePage.customSoftwareDevPageFromHomePage();
-
-    SoftwareDevPage softwareDevPage= homePage.SoftwareDevPageFromHomePage();
+    AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     MaintenanceSupportPage maintenanceSupportPage=homePage.maintenanceSupportPageFromHomePage();
+    SoftwareProductDevelopmentPage softwareProductDevelopmentPage=homePage.softwareProductDevelopmentPage();
 
 
     @And("click Maintenance Support Menu")
     public void clickMaintenanceSupportMenu() {
-
-        maintenanceSupportPage.hoverMaintenanceSupportMenu();
 
         maintenanceSupportPage.clickMaintenanceSupportMenu();
 
@@ -45,9 +42,8 @@ public class MaintenanceSupportSteps {
     public void userClicksGetStartedButtonOnMainBannerOfMaintenanceSupportPage() {
 
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-        customSoftwareDevPage.hoverSoftDevMenu();
-        maintenanceSupportPage.hoverMaintenanceSupportMenu();
+        advisoryServicesPage.selectServicesMenu();
+        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
         maintenanceSupportPage.clickMaintenanceSupportMenu();
         maintenanceSupportPage.clickGetStaredMaintenanceSupport();
 

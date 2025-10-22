@@ -5,7 +5,8 @@ Feature: Maintenance Support Page Navigation
 
   Scenario: Navigate to Maintenance Support Menu
     Given the user is on the Home page
-    When the user hovers Software dev support Menu
+    When the user clicks the Services Menu
+    And hovers Digital Innovation Menu
     And click Maintenance Support Menu
     Then Maintenance Support page should appear
 

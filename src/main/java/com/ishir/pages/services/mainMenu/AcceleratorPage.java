@@ -1,4 +1,4 @@
-package com.ishir.pages.services.subMenu;
+package com.ishir.pages.services.mainMenu;
 
 import com.ishir.pages.base.BasePage;
 import org.openqa.selenium.By;

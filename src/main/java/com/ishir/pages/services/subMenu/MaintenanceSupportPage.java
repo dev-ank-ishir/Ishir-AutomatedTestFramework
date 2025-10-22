@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class MaintenanceSupportPage extends BasePage {
 
-    By loc_maintenance_menu = By.linkText("Maintenance & Support");
+    By loc_maintenance_menu = By.linkText("Software Maintenance & Support");
     By loc_getStarted_MaintenanceSupport = By.cssSelector("div.custom_button>a");
 
     public MaintenanceSupportPage(WebDriver driver) {
@@ -15,20 +15,17 @@ public class MaintenanceSupportPage extends BasePage {
 
 
     public void clickMaintenanceSupportMenu() {
-
+        hoverToElement(loc_maintenance_menu);
         doClickAction(loc_maintenance_menu);
     }
 
     public void clickGetStaredMaintenanceSupport() {
 
-        doClickAction(loc_maintenance_menu);
+        doClickAction(loc_getStarted_MaintenanceSupport);
 
     }
 
-    public void hoverMaintenanceSupportMenu() {
 
-        hoverToElement(loc_maintenance_menu);
-    }
 
 
 

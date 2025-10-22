@@ -6,8 +6,9 @@ import com.ishir.pages.about.NewsPage;
 import com.ishir.pages.about.TeamPage;
 import com.ishir.pages.base.BasePage;
 import com.ishir.pages.insight.InsightPage;
+import com.ishir.pages.services.mainMenu.AcceleratorPage;
 import com.ishir.pages.services.mainMenu.SoftwareDevPage;
-import com.ishir.pages.services.mainMenu.StaffingPage;
+import com.ishir.pages.services.mainMenu.TalentAndSkillsPage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.*;
 import com.ishir.pages.work.ClientsPage;
@@ -159,9 +160,9 @@ public class HomePage extends BasePage {
         return new InsightPage(driver);
     }
 
-    public StaffingPage staffingPageFromHomePage() {
+    public TalentAndSkillsPage talentAndSkillsPageFromHomePage() {
 
-        return new StaffingPage(driver);
+        return new TalentAndSkillsPage(driver);
     }
 
     public AdvisoryServicesPage advisoryServicesFromHomePage() {
@@ -243,6 +244,18 @@ public class HomePage extends BasePage {
     public DataAIAcceleratorPage dataAIAcceleratorPageFromHomePage(){
 
         return new DataAIAcceleratorPage(driver);
+
+    }
+
+    public SoftwareProductDevelopmentPage softwareProductDevelopmentPage(){
+
+        return new SoftwareProductDevelopmentPage(driver);
+    }
+
+    public TalentAndSkillsPage talentAndSkillsPage(){
+
+        return new TalentAndSkillsPage(driver);
+
 
     }
 }

@@ -2,7 +2,7 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.services.mainMenu.StaffingPage;
+import com.ishir.pages.services.mainMenu.TalentAndSkillsPage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -10,43 +10,40 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class StaffingPageSteps {
+public class TalentAndSkillsPageSteps {
     HomePage homePage = new HomePage(DriverFactory.getDriver());
     AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
-    StaffingPage staffingPage = homePage.staffingPageFromHomePage();
+    TalentAndSkillsPage talentAndSkillsPage = homePage.talentAndSkillsPage();
 
-
-    @Given("the user is on the Staffing page")
-    public void theUserIsOnTheStaffingPage() {
+    @Given("the user is on the Talent & Skills page")
+    public void theUserIsOnTheTalentAndSkillsPage() {
 
     }
 
-    @And("click Staffing Menu option")
-    public void clickStaffingMenuOption() {
-
-        staffingPage.selectStaffingMenu();
+    @And("click Talent & Skills Menu option")
+    public void clickTalentAndSkillsMenuOption() {
+        talentAndSkillsPage.selectTalentAndSkillsMenu();
     }
 
-    @Then("Staffing page should appear")
-    public void staffingPageShouldAppear() {
+    @Then("Talent & Skills page should appear")
+    public void talentAndSkillsPageShouldAppear() {
 
-        Assert.assertEquals(staffingPage.doGetCurrentPageURL(),"https://www.ishir.com/staffing-and-augmentation.htm");
+        Assert.assertEquals(talentAndSkillsPage.doGetCurrentPageURL(), "https://www.ishir.com/staffing-and-augmentation.htm");
     }
 
     @When("the user clicks main Get Started button")
     public void theUserClicksMainGetStartedButton() {
         homePage.handleCookieAndPopups();
         advisoryServicesPage.selectServicesMenu();
-        staffingPage.selectStaffingMenu();
-        staffingPage.clickGetStartedMain();
-
+        talentAndSkillsPage.selectTalentAndSkillsMenu();
+        talentAndSkillsPage.clickGetStartedMain();
     }
 
     @When("the user clicks bottom Get Started button")
     public void theUserClicksBottomGetStartedButton() {
         homePage.handleCookieAndPopups();
         advisoryServicesPage.selectServicesMenu();
-        staffingPage.selectStaffingMenu();
-        staffingPage.clickGetStartedBottom();
+        talentAndSkillsPage.selectTalentAndSkillsMenu();
+        talentAndSkillsPage.clickGetStartedBottom();
     }
 }

@@ -2,7 +2,7 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.services.mainMenu.StaffingPage;
+import com.ishir.pages.services.mainMenu.TalentAndSkillsPage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.AgileTeamPodsPage;
 import io.cucumber.java.en.And;
@@ -15,9 +15,14 @@ public class AgileTeamPodsSteps {
 
     HomePage homePage = new HomePage(DriverFactory.getDriver());
     AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
-    StaffingPage staffingPage = homePage.staffingPageFromHomePage();
+    TalentAndSkillsPage talentAndSkillsPage = homePage.talentAndSkillsPageFromHomePage();
     AgileTeamPodsPage agileTeamPodsPage = homePage.agileTeamPodsPageFromHomePage();
 
+    @And("hovers Talent & Skills Menu option")
+    public void hoversTalentSkillsMenuOption() {
+
+        talentAndSkillsPage.hoverTalentAndSkillsMenu();
+    }
     @And("click Agile Team Pods Menu")
     public void clickAgileTeamPodsMenu() {
 
@@ -40,8 +45,7 @@ public class AgileTeamPodsSteps {
 
         homePage.handleCookieAndPopups();
         AdvisoryServicesPage.selectServicesMenu();
-        staffingPage.hoverStaffingMenu();
-
+        talentAndSkillsPage.hoverTalentAndSkillsMenu();
         agileTeamPodsPage.clickAgileTeamPodsMenu();
         agileTeamPodsPage.clickGetStartedMainBannerAgileTeamPods();
 
@@ -53,9 +57,10 @@ public class AgileTeamPodsSteps {
 
         homePage.handleCookieAndPopups();
         AdvisoryServicesPage.selectServicesMenu();
-        staffingPage.hoverStaffingMenu();
-
+        talentAndSkillsPage.hoverTalentAndSkillsMenu();
         agileTeamPodsPage.clickAgileTeamPodsMenu();
         agileTeamPodsPage.clickGetStartedHowWeEngageAgileTeamPods();
     }
+
+
 }

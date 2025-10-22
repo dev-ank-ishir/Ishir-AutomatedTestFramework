@@ -5,6 +5,7 @@ import com.ishir.pages.HomePage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.CustomSoftwareDevPage;
 import com.ishir.pages.services.subMenu.ProjectRescuePage;
+import com.ishir.pages.services.subMenu.SoftwareProductDevelopmentPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,16 +15,14 @@ import org.junit.Assert;
 public class ProjectRescueSteps {
 
     HomePage homePage=new HomePage(DriverFactory.getDriver());
-    AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
-    CustomSoftwareDevPage customSoftwareDevPage=homePage.customSoftwareDevPageFromHomePage();
+    AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     ProjectRescuePage projectRescuePage=homePage.projectRescuePageFromHomePage();
+    SoftwareProductDevelopmentPage softwareProductDevelopmentPage=homePage.softwareProductDevelopmentPage();
+
 
 
     @And("click Project Rescue Menu")
     public void clickProjectRescueMenu() throws InterruptedException {
-
-        AdvisoryServicesPage.selectServicesMenu();
-        customSoftwareDevPage.hoverSoftDevMenu();
         projectRescuePage.selectProjectRescueMenu();
     }
 
@@ -37,24 +36,15 @@ public class ProjectRescueSteps {
     public void theUserIsOnTheProjectRescuePage() {
     }
 
-    @When("the user clicks Get Started on Project Rescue page")
-    public void theUserClicksGetStartedOnProjectRescuePage() throws InterruptedException {
-
-        homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-        customSoftwareDevPage.hoverSoftDevMenu();
-        projectRescuePage.selectProjectRescueMenu();
-        projectRescuePage.clickGetStarted();
-
-    }
 
     @When("the user clicks Get Started on main banner")
     public void theUserClicksGetStartedOnMainBanner() {
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-        customSoftwareDevPage.hoverSoftDevMenu();
+        advisoryServicesPage.selectServicesMenu();
+        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStarted();
+
 
     }
 
@@ -62,8 +52,8 @@ public class ProjectRescueSteps {
     public void theUserClicksGetStartedOnUnderCommonIssuesSection() {
 
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-        customSoftwareDevPage.hoverSoftDevMenu();
+        advisoryServicesPage.selectServicesMenu();
+        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStartedCommonIssues();
 
@@ -73,8 +63,8 @@ public class ProjectRescueSteps {
     public void theUserClicksGetStartedOnUnderHowWeEngageSection() {
 
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-        customSoftwareDevPage.hoverSoftDevMenu();
+        advisoryServicesPage.selectServicesMenu();
+        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStartedHowWeEngage();
 

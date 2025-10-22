@@ -5,8 +5,9 @@ Feature: On Demand Page Navigation
 
   Scenario: Navigate to on Demand Page
     Given the user is on the Home page
-    When the user hovers Staffing Menu
-    And click On Demand Talent Menu
+    When the user clicks the Services Menu
+    And hovers Talent & Skills Menu option
+    And clicks On Demand & Fractional Talent Menu
     Then On Demand page should appear
 
   Scenario: Navigate to Get in Touch via On Demand Talent page

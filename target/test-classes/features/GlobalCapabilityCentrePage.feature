@@ -3,10 +3,11 @@
 Feature: Global Capability Centre Navigation
   As a user, I want to navigate through the Global Capability Centre to access different forms.
 
-  Scenario: Navigate to Global Capability Centre Page
+  Scenario: Navigate to on Global Capability Centre Page
     Given the user is on the Home page
-    When the user hovers Staffing Menu
-    And click Global Capability Centre Menu
+    When the user clicks the Services Menu
+    And hovers Talent & Skills Menu option
+    And clicks Global Capability Centre Menu
     Then Global Capability Centre page should appear
 
   Scenario: Navigate to Get in Touch via Global Capability Centre page

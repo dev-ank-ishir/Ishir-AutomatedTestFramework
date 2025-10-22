@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class GlobalCapabilityCentrePage extends BasePage {
 
-    By loc_GlobalCapabilityCentre_menu= By.linkText("Global Capacity Center");
+    By loc_GlobalCapabilityCentre_menu= By.linkText("Global Capability Centers (GCC)");
     By loc_getStarted_GlobalCapabilityCentre=By.cssSelector("div.custom_button>a");
     public GlobalCapabilityCentrePage(WebDriver driver) {
         super(driver);
@@ -14,6 +14,7 @@ public class GlobalCapabilityCentrePage extends BasePage {
 
     public void clickGlobalCapabilityCentreMenu(){
 
+        hoverToElement(loc_GlobalCapabilityCentre_menu);
         doClickAction(loc_GlobalCapabilityCentre_menu);
 
     }

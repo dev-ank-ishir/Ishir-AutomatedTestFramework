@@ -5,7 +5,8 @@ Feature: Data Analytics Page Navigation
 
   Scenario: Navigate to Data Analytics Menu
     Given the user is on the Home page
-    When the user hovers Strategic Advisory Menu
+    When the user clicks the Services Menu
+    And hovers Data+AI Menu
     And clicks Data Analytics Menu
     Then Data Analytics page should appear
 

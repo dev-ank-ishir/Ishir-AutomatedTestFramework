@@ -3,7 +3,7 @@ package com.ishir.stepsdefinitions;
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
-import com.ishir.pages.services.subMenu.AcceleratorPage;
+import com.ishir.pages.services.mainMenu.AcceleratorPage;
 import com.ishir.pages.services.subMenu.DataAIAcceleratorPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

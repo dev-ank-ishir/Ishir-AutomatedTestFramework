@@ -2,7 +2,7 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.services.mainMenu.StaffingPage;
+import com.ishir.pages.services.mainMenu.TalentAndSkillsPage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
 import com.ishir.pages.services.subMenu.GlobalCapabilityCentrePage;
 import io.cucumber.java.en.And;
@@ -14,12 +14,11 @@ import org.junit.Assert;
 public class GlobalCapabilityCentreSteps {
 
     HomePage homePage = new HomePage(DriverFactory.getDriver());
-    AdvisoryServicesPage AdvisoryServicesPage = homePage.advisoryServicesFromHomePage();
-    StaffingPage staffingPage = homePage.staffingPageFromHomePage();
-
+    AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
+    TalentAndSkillsPage talentAndSkillsPage = homePage.talentAndSkillsPageFromHomePage();
     GlobalCapabilityCentrePage globalCapabilityCentrePage = homePage.globalCapabilityCentrePageFromHomePage();
 
-    @And("click Global Capability Centre Menu")
+    @And("clicks Global Capability Centre Menu")
     public void clickGlobalCapabilityCentreMenu() {
         globalCapabilityCentrePage.clickGlobalCapabilityCentreMenu();
 
@@ -41,8 +40,8 @@ public class GlobalCapabilityCentreSteps {
     public void theUserClicksGetStartedButtonOnMainBannerGCC() {
 
         homePage.handleCookieAndPopups();
-        AdvisoryServicesPage.selectServicesMenu();
-        staffingPage.hoverStaffingMenu();
+        advisoryServicesPage.selectServicesMenu();
+        talentAndSkillsPage.hoverTalentAndSkillsMenu();
         globalCapabilityCentrePage.clickGlobalCapabilityCentreMenu();
         globalCapabilityCentrePage.clickGetStartedOverGlobalCapabilityCentrePage();
 

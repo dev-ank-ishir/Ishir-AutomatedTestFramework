@@ -5,7 +5,8 @@ Feature: Project Rescue Page Navigation
 
   Scenario: Navigate to Project Rescue Menu
     Given the user is on the Home page
-    When the user hovers Software dev support Menu
+    When the user clicks the Services Menu
+    And hovers Digital Innovation Menu
     And click Project Rescue Menu
     Then Project Rescue page should appear
 
