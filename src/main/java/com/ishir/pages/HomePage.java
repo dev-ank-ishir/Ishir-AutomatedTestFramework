@@ -1,9 +1,9 @@
 package com.ishir.pages;
 
-import com.ishir.pages.about.AboutPage;
+import com.ishir.pages.about.CompanyPage;
 import com.ishir.pages.about.EventsPage;
 import com.ishir.pages.about.NewsPage;
-import com.ishir.pages.about.TeamPage;
+import com.ishir.pages.about.LeadershipPage;
 import com.ishir.pages.base.BasePage;
 import com.ishir.pages.insight.InsightPage;
 import com.ishir.pages.services.mainMenu.AcceleratorPage;
@@ -124,14 +124,14 @@ public class HomePage extends BasePage {
 
     }
 
-    public AboutPage aboutPageFromHomePage() {
+    public CompanyPage companyPageFromHomePage() {
 
-        return new AboutPage(driver);
+        return new CompanyPage(driver);
     }
 
-    public TeamPage teamPageFromHomePage() {
+    public LeadershipPage leadershipPageFromHomePage() {
 
-        return new TeamPage(driver);
+        return new LeadershipPage(driver);
     }
 
     public EventsPage eventsPageFromHomePage() {

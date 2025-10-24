@@ -2,19 +2,22 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.about.AboutPage;
+import com.ishir.pages.about.CompanyPage;
 import com.ishir.pages.about.EventsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 
 public class EventsPageSteps {
     HomePage homePage = new HomePage(DriverFactory.getDriver());
     EventsPage eventsPage = homePage.eventsPageFromHomePage();
 
-    AboutPage aboutPage = homePage.aboutPageFromHomePage();
+    CompanyPage companyPage = homePage.companyPageFromHomePage();
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
 
     @And("selects the Events option")
@@ -29,7 +32,8 @@ public class EventsPageSteps {
     @Then("Events page should appear")
     public void eventsPageShouldAppear() {
 
-        Assert.assertEquals(eventsPage.doGetCurrentPageURL(),"https://www.ishir.com/events.htm");
+        Assert.assertEquals("https://www.ishir.com/events.htm",eventsPage.doGetCurrentPageURL());
+        logger.info("Events page appeared");
 
     }
 
@@ -42,7 +46,7 @@ public class EventsPageSteps {
     public void theUserClicksTheStayUpdatedButtonOnEventsPage() {
 
         homePage.handleCookieAndPopups();
-        aboutPage.openAboutDropDown();
+        companyPage.openAboutDropDown();
         eventsPage.selectEventOption();
         eventsPage.selectStayUpdatedOption();
 
@@ -52,7 +56,7 @@ public class EventsPageSteps {
     public void theUserClicksReadMoreOverAvailableEvent() {
 
         homePage.handleCookieAndPopups();
-        aboutPage.openAboutDropDown();
+        companyPage.openAboutDropDown();
         eventsPage.selectEventOption();
         eventsPage.selectReadMoreEventLink();
 
@@ -67,7 +71,7 @@ public class EventsPageSteps {
     @When("the user clicks the trending blog")
     public void theUserClicksTheTrendingBlog() {
         homePage.handleCookieAndPopups();
-        aboutPage.openAboutDropDown();
+        companyPage.openAboutDropDown();
         eventsPage.selectEventOption();
         eventsPage.selectTrendingBlogLink();
     }

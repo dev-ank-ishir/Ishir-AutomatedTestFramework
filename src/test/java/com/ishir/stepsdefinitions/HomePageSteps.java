@@ -30,8 +30,8 @@ public class HomePageSteps {
     @Then("the Get in Touch form should appear")
     public void getInTouchFormAppears() {
 
-        Assert.assertEquals(homePage.getCurrentPageTitle(),"Get in Touch | Hire Developers | Contact Our Tech Experts | 24/7 Support | India, Dallas, Tx - ISHIR");
-        Assert.assertEquals(homePage.getCurrentPageURL(),"https://www.ishir.com/get-in-touch.htm");
+        Assert.assertEquals("Get in Touch | Hire Developers | Contact Our Tech Experts | 24/7 Support | India, Dallas, Tx - ISHIR",homePage.getCurrentPageTitle());
+        Assert.assertEquals("https://www.ishir.com/get-in-touch.htm",homePage.getCurrentPageURL());
         logger.info("Latest Get In Touch Form Appeared");
 
     }

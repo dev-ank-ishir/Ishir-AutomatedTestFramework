@@ -2,19 +2,24 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.about.AboutPage;
+import com.ishir.pages.about.CompanyPage;
 import com.ishir.pages.about.NewsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 
 public class NewsSteps {
 
     HomePage homePage = new HomePage(DriverFactory.getDriver());
-    AboutPage aboutPage = homePage.aboutPageFromHomePage();
+    CompanyPage companyPage = homePage.companyPageFromHomePage();
     NewsPage newsPage = homePage.newsPageFromHomePage();
+
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
 
 
 
@@ -29,7 +34,8 @@ public class NewsSteps {
 
     @Then("News page should appear")
     public void newsPageShouldAppear() {
-        Assert.assertEquals(newsPage.doGetCurrentPageURL(),"https://www.ishir.com/inthenews-2.htm");
+        Assert.assertEquals("https://www.ishir.com/inthenews-2.htm",newsPage.doGetCurrentPageURL());
+        logger.info("News page appeared successfully");
     }
 
     @Given("the user is on the News page")
@@ -40,7 +46,7 @@ public class NewsSteps {
     public void theUserClicksTheStayUpdatedButtonOnNewsPage() {
 
         homePage.handleCookieAndPopups();
-        aboutPage.openAboutDropDown();
+        companyPage.openAboutDropDown();
         newsPage.selectNewsMenu();
         newsPage.clickStayUpdatedOverNewsPage();
 

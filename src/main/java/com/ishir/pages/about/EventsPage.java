@@ -49,9 +49,9 @@ public class EventsPage extends BasePage {
 
     public void clickGetStartedBlogsPage() {
 
-        doSwitchToFrame(loc_AI_Toast_frame);
-        doClickAction(loc_iframe_AI_ToastMsg);
-        getElementsList(loc_getStarted_BlogsPage).get(1).click();
+       // doSwitchToFrame(loc_AI_Toast_frame);
+       // doClickAction(loc_iframe_AI_ToastMsg);
+        getElementsList(loc_getStarted_BlogsPage).get(0).click();
     }
 
 }
