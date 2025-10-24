@@ -11,11 +11,23 @@ public class AcceleratorPage extends BasePage {
     }
 
     // Locators
-    By loc_Accelerator_Menu = By.linkText("Accelerator");
+
+    By loc_Expertise=By.linkText("Expertise");
+    By loc_Accelerator_Menu = By.linkText("Accelerators");
     By loc_getStarted_MainBanner = By.cssSelector("div.custom_button > a");
     By loc_getStarted_AccelerateYourSuccess = By.cssSelector("div#ScheduleaConsultation a");
 
+
+
     // Actions
+
+    public void selectExpertiseMenu() {
+
+        doClickAction(loc_Expertise);
+
+    }
+
+
     public void selectAcceleratorMenu() {
         hoverToElement(loc_Accelerator_Menu);
         doClickAction(loc_Accelerator_Menu);

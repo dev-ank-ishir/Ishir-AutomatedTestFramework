@@ -247,9 +247,9 @@ public class HomePage extends BasePage {
 
     }
 
-    public SoftwareProductDevelopmentPage softwareProductDevelopmentPage(){
+    public DigitalProductDevelopmentPage fromDigitalProductDevelopmentPage(){
 
-        return new SoftwareProductDevelopmentPage(driver);
+        return new DigitalProductDevelopmentPage(driver);
     }
 
     public TalentAndSkillsPage talentAndSkillsPage(){

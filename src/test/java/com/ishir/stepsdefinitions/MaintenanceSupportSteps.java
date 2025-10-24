@@ -2,11 +2,9 @@ package com.ishir.stepsdefinitions;
 
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
-import com.ishir.pages.services.mainMenu.SoftwareDevPage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
-import com.ishir.pages.services.subMenu.CustomSoftwareDevPage;
 import com.ishir.pages.services.subMenu.MaintenanceSupportPage;
-import com.ishir.pages.services.subMenu.SoftwareProductDevelopmentPage;
+import com.ishir.pages.services.subMenu.DigitalProductDevelopmentPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,7 +16,7 @@ public class MaintenanceSupportSteps {
     HomePage homePage=new HomePage(DriverFactory.getDriver());
     AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     MaintenanceSupportPage maintenanceSupportPage=homePage.maintenanceSupportPageFromHomePage();
-    SoftwareProductDevelopmentPage softwareProductDevelopmentPage=homePage.softwareProductDevelopmentPage();
+    DigitalProductDevelopmentPage digitalProductDevelopmentPage =homePage.fromDigitalProductDevelopmentPage();
 
 
     @And("click Maintenance Support Menu")
@@ -43,7 +41,7 @@ public class MaintenanceSupportSteps {
 
         homePage.handleCookieAndPopups();
         advisoryServicesPage.selectServicesMenu();
-        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
+        digitalProductDevelopmentPage.selectDigitalProductInnovationMenu();
         maintenanceSupportPage.clickMaintenanceSupportMenu();
         maintenanceSupportPage.clickGetStaredMaintenanceSupport();
 

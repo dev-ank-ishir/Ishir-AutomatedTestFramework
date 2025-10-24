@@ -1,11 +1,11 @@
-@Accelerator
+@Accelerators
 
 Feature: Accelerator Page Navigation
   As a user, I want to navigate through the Accelerator Page to access different forms.
 
   Scenario: Navigate to Accelerator Menu
     Given the user is on the Home page
-    When the user clicks the Services Menu
+    When the user clicks the Expertise Menu
     And user clicks Accelerator Menu
     Then Accelerator page should appear
 

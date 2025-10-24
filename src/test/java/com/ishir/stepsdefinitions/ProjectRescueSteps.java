@@ -3,9 +3,8 @@ package com.ishir.stepsdefinitions;
 import com.ishir.factory.DriverFactory;
 import com.ishir.pages.HomePage;
 import com.ishir.pages.services.mainMenu.AdvisoryServicesPage;
-import com.ishir.pages.services.subMenu.CustomSoftwareDevPage;
 import com.ishir.pages.services.subMenu.ProjectRescuePage;
-import com.ishir.pages.services.subMenu.SoftwareProductDevelopmentPage;
+import com.ishir.pages.services.subMenu.DigitalProductDevelopmentPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,7 +16,7 @@ public class ProjectRescueSteps {
     HomePage homePage=new HomePage(DriverFactory.getDriver());
     AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     ProjectRescuePage projectRescuePage=homePage.projectRescuePageFromHomePage();
-    SoftwareProductDevelopmentPage softwareProductDevelopmentPage=homePage.softwareProductDevelopmentPage();
+    DigitalProductDevelopmentPage digitalProductDevelopmentPage =homePage.fromDigitalProductDevelopmentPage();
 
 
 
@@ -41,7 +40,7 @@ public class ProjectRescueSteps {
     public void theUserClicksGetStartedOnMainBanner() {
         homePage.handleCookieAndPopups();
         advisoryServicesPage.selectServicesMenu();
-        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
+        digitalProductDevelopmentPage.selectDigitalProductInnovationMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStarted();
 
@@ -53,7 +52,7 @@ public class ProjectRescueSteps {
 
         homePage.handleCookieAndPopups();
         advisoryServicesPage.selectServicesMenu();
-        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
+        digitalProductDevelopmentPage.selectDigitalProductInnovationMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStartedCommonIssues();
 
@@ -64,7 +63,7 @@ public class ProjectRescueSteps {
 
         homePage.handleCookieAndPopups();
         advisoryServicesPage.selectServicesMenu();
-        softwareProductDevelopmentPage.selectDigitalInnovationMenu();
+        digitalProductDevelopmentPage.selectDigitalProductInnovationMenu();
         projectRescuePage.selectProjectRescueMenu();
         projectRescuePage.clickGetStartedHowWeEngage();
 

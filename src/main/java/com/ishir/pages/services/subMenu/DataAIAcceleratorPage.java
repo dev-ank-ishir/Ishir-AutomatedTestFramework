@@ -10,7 +10,7 @@ public class DataAIAcceleratorPage extends BasePage {
     }
 
     // Locators
-    By loc_DataAIAccelerator_Menu = By.linkText("Data+AI Accelerator");
+    By loc_DataAIAccelerator_Menu = By.linkText("Data + AI Accelerator");
     By loc_getStartedMainBanner = By.cssSelector("section#inner_banner div.custom_button>a");
     By loc_getStartedReadyToAccelerateSection = By.cssSelector("div#ReadytoAccelerateAIwithISHIR a");
 

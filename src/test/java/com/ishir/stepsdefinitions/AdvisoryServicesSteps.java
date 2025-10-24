@@ -14,11 +14,7 @@ public class AdvisoryServicesSteps {
     HomePage homePage = new HomePage(DriverFactory.getDriver());
     AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
 
-    @When("the user clicks the Services Menu")
-    public void the_user_clicks_the_Services_Menu() {
-        homePage.handleCookieAndPopups();
-        advisoryServicesPage.selectServicesMenu();
-    }
+
 
     @And("clicks advisory Services Menu option")
     public void clicks_advisory_Services_Menu_option() {

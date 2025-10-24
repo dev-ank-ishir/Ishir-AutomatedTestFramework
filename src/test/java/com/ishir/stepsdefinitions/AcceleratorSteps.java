@@ -8,6 +8,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 
 public class AcceleratorSteps {
@@ -16,7 +18,17 @@ public class AcceleratorSteps {
     AdvisoryServicesPage advisoryServicesPage = homePage.advisoryServicesFromHomePage();
     AcceleratorPage acceleratorPage = homePage.acceleratorPageFromHomePage();
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
+
+
+    @When("the user clicks the Expertise Menu")
+    public void theUserClicksTheExpertiseMenu() {
+
+        homePage.handleCookieAndPopups();
+        acceleratorPage.selectExpertiseMenu();
+
+    }
     @And("user clicks Accelerator Menu")
     public void userClicksAcceleratorMenu() {
         acceleratorPage.selectAcceleratorMenu();
@@ -24,7 +36,8 @@ public class AcceleratorSteps {
 
     @Then("Accelerator page should appear")
     public void acceleratorPageShouldAppear() {
-        Assert.assertEquals(acceleratorPage.doGetCurrentPageURL(), "https://www.ishir.com/accelerator-workshops.htm");
+        Assert.assertEquals("https://www.ishir.com/accelerator-workshops.htm",acceleratorPage.doGetCurrentPageURL());
+        logger.info("Accelerator Page appeared successfully");
     }
 
     @Given("the user is on the Accelerator page")
@@ -35,7 +48,7 @@ public class AcceleratorSteps {
     @When("the user clicks Get Started button on main banner of Accelerator Page")
     public void theUserClicksGetStartedButtonOnMainBannerOfAcceleratorPage() {
         homePage.handleCookieAndPopups();
-        advisoryServicesPage.selectServicesMenu();
+        acceleratorPage.selectExpertiseMenu();
         acceleratorPage.selectAcceleratorMenu();
         acceleratorPage.selectGetStartedMainBanner();
     }
@@ -43,8 +56,10 @@ public class AcceleratorSteps {
     @When("the user clicks Get Started on Accelerate Your Success section")
     public void theUserClicksGetStartedOnAccelerateYourSuccessSection() {
         homePage.handleCookieAndPopups();
-        advisoryServicesPage.selectServicesMenu();
+        acceleratorPage.selectExpertiseMenu();
         acceleratorPage.selectAcceleratorMenu();
         acceleratorPage.selectGetStartedAccelerateYourSuccessSection();
     }
+
+
 }

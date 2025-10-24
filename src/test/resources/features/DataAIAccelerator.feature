@@ -5,7 +5,8 @@ Feature: Data+AI Accelerator Page Navigation
 
   Scenario: Navigate to Data+AI Accelerator Menu
     Given the user is on the Home page
-    When the user clicks the Services Menu
+    When the user clicks the Expertise Menu
+    And hovers Accelerator Menu
     And clicks Data+AI Accelerator Menu
     Then Data+AI Accelerator page should appear
 
